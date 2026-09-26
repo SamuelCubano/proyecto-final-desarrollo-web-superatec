@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con Astro Resorts. Reservas, prensa y soporte 24/7.">
+    <meta name="theme-color" content="#0a0a12">
+    <title>Contacto — Astro Resorts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/contacto.css">
+</head>
+<body>
+    <header class="header" role="banner">
+        <div class="container header__container">
+            <a href="index.html" class="logo" aria-label="Astro Resorts - Inicio">Astro<span>Resorts</span></a>
+            <nav class="nav" role="navigation" aria-label="Navegación principal">
+                <ul class="nav__list" id="navList">
+                    <li><a href="index.html" class="nav__link">Inicio</a></li>
+                    <li><a href="paquetes.html" class="nav__link">Paquetes</a></li>
+                    <li><a href="servicios.html" class="nav__link">Servicios</a></li>
+                    <li><a href="localizacion.html" class="nav__link">Localización</a></li>
+                    <li><a href="sobre-nosotros.html" class="nav__link">Sobre Nosotros</a></li>
+                    <li><a href="contacto.html" class="nav__link active" aria-current="page">Contacto</a></li>
+                    <li><a href="terminos-y-condiciones.html" class="nav__link">Términos</a></li>
+                </ul>
+            </nav>
+            <button class="nav__toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navList">
+                <span class="nav__toggle-bar" aria-hidden="true"></span>
+                <span class="nav__toggle-bar" aria-hidden="true"></span>
+                <span class="nav__toggle-bar" aria-hidden="true"></span>
+            </button>
+        </div>
+    </header>
+
+    <main role="main">
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="page-hero__overlay" aria-hidden="true"></div>
+            <div class="container page-hero__container">
+                <span class="page-hero__eyebrow reveal">Habla con nuestro equipo</span>
+                <h1 id="page-title" class="page-hero__title reveal">Contacto</h1>
+                <p class="page-hero__text reveal">Estamos listos para diseñar tu viaje, responder dudas o simplemente inspirarte.</p>
+            </div>
+        </section>
+
+        <section class="section section--light contact-layout" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="section__header reveal">
+                    <span class="section__eyebrow">Canales directos</span>
+                    <h2 id="contact-title" class="section__title">Información de contacto</h2>
+                    <p class="section__subtitle">Elige el canal que prefieras. Nuestro equipo responde en menos de 24 horas.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-card reveal">
+                        <div class="contact-card__icon" aria-hidden="true">✉</div>
+                        <h3 class="contact-card__title">Correo</h3>
+                        <a class="contact-card__value" href="mailto:reservas@astroresorts.com">reservas@astroresorts.com</a>
+                        <p class="contact-card__note">Ideal para reservas y presupuestos.</p>
+                    </div>
+                    <div class="contact-card reveal">
+                        <div class="contact-card__icon" aria-hidden="true">✆</div>
+                        <h3 class="contact-card__title">Teléfono</h3>
+                        <a class="contact-card__value" href="tel:+15550210278">+1 (555) 0210-ASTRO</a>
+                        <p class="contact-card__note">Lun a Vie de 9:00 a 21:00 UTC-5.</p>
+                    </div>
+                    <div class="contact-card reveal">
+                        <div class="contact-card__icon" aria-hidden="true">✺</div>
+                        <h3 class="contact-card__title">Chat estelar</h3>
+                        <button class="contact-card__value" type="button" id="openSupport">Iniciar chat de soporte</button>
+                        <p class="contact-card__note">Respuesta inmediata para consultas urgentes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--dark" aria-labelledby="form-title">
+            <div class="container contact-form-layout">
+                <div class="contact-form__intro reveal">
+                    <span class="section__eyebrow">Formulario</span>
+                    <h2 id="form-title" class="section__title">Escríbenos tu mensaje</h2>
+                    <p class="section__subtitle">Cuéntanos fechas, destino y cualquier necesidad especial. Te devolvemos la llamada si lo necesitas.</p>
+                </div>
+                <form class="contact-form" id="contactForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group"><label class="form-label" for="contactName">Nombre</label><input class="form-input" id="contactName" name="name" type="text" required autocomplete="name"><span class="form-error">Ingresa tu nombre</span></div>
+                        <div class="form-group"><label class="form-label" for="contactEmail">Correo</label><input class="form-input" id="contactEmail" name="email" type="email" required autocomplete="email"><span class="form-error">Ingresa un correo válido</span></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label class="form-label" for="contactDestination">Destino</label><select class="form-select" id="contactDestination" name="destination"><option value="">Selecciona un destino</option><option>Maldivas del Norte</option><option>Santuario Andino</option><option>Oasis del Desierto</option><option>Archipiélago Helado</option></select><span class="form-error">Selecciona un destino</span></div>
+                        <div class="form-group"><label class="form-label" for="contactDate">Fecha aproximada</label><input class="form-input" id="contactDate" name="date" type="date"><span class="form-error">Indica una fecha</span></div>
+                    </div>
+                    <div class="form-group"><label class="form-label" for="contactMessage">Mensaje</label><textarea class="form-textarea" id="contactMessage" name="message" placeholder="Cuéntanos qué necesitas..." required></textarea><span class="form-error">Escribe tu mensaje</span></div>
+                    <button class="btn btn--primary btn--lg" type="submit">Enviar mensaje</button>
+                    <p class="form-success" id="contactSuccess">Mensaje enviado. Te contactaremos pronto.</p>
+                </form>
+            </div>
+        </section>
+
+        <section class="section section--light" aria-labelledby="faq-title">
+            <div class="container">
+                <div class="section__header section__header--center reveal">
+                    <span class="section__eyebrow">Ayuda rápida</span>
+                    <h2 id="faq-title" class="section__title">Preguntas frecuentes de contacto</h2>
+                </div>
+                <div class="faq-list" id="faqList">
+                    <details class="faq-item reveal"><summary>¿Con cuánta antelación debo reservar?<span class="faq-item__icon" aria-hidden="true">+</span></summary><p>Recomendamos entre 3 y 6 meses para temporada alta.</p></details>
+                    <details class="faq-item reveal"><summary>¿Atienden eventos privados?<span class="faq-item__icon" aria-hidden="true">+</span></summary><p>Sí. Bodas, cumpleaños y eventos corporativos.</p></details>
+                    <details class="faq-item reveal"><summary>¿Puedo reprogramar sin penalidad?<span class="faq-item__icon" aria-hidden="true">+</span></summary><p>Depende de la tarifa. Consulta nuestros términos.</p></details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container footer__container">
+            <div class="footer__brand reveal"><a href="index.html" class="logo">Astro<span>Resorts</span></a><p class="footer__tagline">Donde el lujo se encuentra con el cosmos.</p></div>
+            <div class="footer__links">
+                <div class="footer__col reveal"><h4 class="footer__title">Destinos</h4><ul class="footer__list"><li><a href="paquetes.html#maldivas">Maldivas del Norte</a></li><li><a href="paquetes.html#andino">Santuario Andino</a></li><li><a href="paquetes.html#desierto">Oasis del Desierto</a></li><li><a href="paquetes.html#helando">Archipiélago Helado</a></li></ul></div>
+                <div class="footer__col reveal"><h4 class="footer__title">Compañía</h4><ul class="footer__list"><li><a href="sobre-nosotros.html">Sobre Nosotros</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="terminos-y-condiciones.html">Términos y Condiciones</a></li></ul></div>
+                <div class="footer__col reveal"><h4 class="footer__title">Contacto</h4><ul class="footer__list"><li><a href="mailto:reservas@astroresorts.com" class="footer__contact">reservas@astroresorts.com</a></li><li><a href="tel:+15550210278" class="footer__contact">+1 (555) 0210-ASTRO</a></li><li><address class="footer__contact">Carretera Estelar 127, Nebulosa Central</address></li></ul></div>
+            </div>
+        </div>
+        <div class="footer__bottom"><div class="container"><p class="footer__copyright">&copy; 2026 Astro Resorts. Todos los derechos reservados.</p></div></div>
+    </footer>
+    <script src="../js/contacto.js"></script>
+</body>
+</html>

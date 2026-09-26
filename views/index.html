@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Astro Resorts - Tu refugio de lujo entre las estrellas. Reserva tu experiencia hotelera única en destinos cósmicos.">
+    <meta name="theme-color" content="#0a0a12">
+    <title>Astro Resorts — Lujo Intergaláctico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <header class="header" role="banner">
+        <div class="container header__container">
+            <a href="index.html" class="logo" aria-label="Astro Resorts - Inicio">
+                Astro<span>Resorts</span>
+            </a>
+            <nav class="nav" role="navigation" aria-label="Navegación principal">
+                <ul class="nav__list" id="navList">
+                    <li><a href="index.html" class="nav__link active" aria-current="page">Inicio</a></li>
+                    <li><a href="paquetes.html" class="nav__link">Paquetes</a></li>
+                    <li><a href="servicios.html" class="nav__link">Servicios</a></li>
+                    <li><a href="localizacion.html" class="nav__link">Localización</a></li>
+                    <li><a href="sobre-nosotros.html" class="nav__link">Sobre Nosotros</a></li>
+                    <li><a href="contacto.html" class="nav__link">Contacto</a></li>
+                    <li><a href="terminos-y-condiciones.html" class="nav__link">Términos</a></li>
+                </ul>
+            </nav>
+            <button class="nav__toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navList">
+                <span class="nav__toggle-bar" aria-hidden="true"></span>
+                <span class="nav__toggle-bar" aria-hidden="true"></span>
+                <span class="nav__toggle-bar" aria-hidden="true"></span>
+            </button>
+        </div>
+    </header>
+
+    <main role="main">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero__overlay" aria-hidden="true"></div>
+            <div class="container hero__container">
+                <div class="hero__content reveal">
+                    <span class="hero__subtitle">Lujo Intergaláctico</span>
+                    <h1 id="hero-title" class="hero__title">Descubre el Encanto del Cosmos</h1>
+                    <p class="hero__description">
+                        En Astro Resorts transformamos tus viajes en experiencias cósmicas. 
+                        Desde cálidas playas hasta cumbres galácticas, encontrarás tu santuario de lujo.
+                    </p>
+                    <div class="hero__cta">
+                        <a href="paquetes.html" class="btn btn--primary">Reserva tu Estancia</a>
+                        <a href="servicios.html" class="btn btn--secondary">Explora Servicios</a>
+                    </div>
+                </div>
+            </div>
+            <button class="hero__scroll-down" aria-label="Desplazarse hacia abajo para explorar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 16L6 10H18L12 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </section>
+
+        <!-- Destinos Destacados -->
+        <section class="section section--light" aria-labelledby="destinos-title">
+            <div class="container">
+                <div class="section__header reveal">
+                    <span class="section__eyebrow">Destinos Premium</span>
+                    <h2 id="destinos-title" class="section__title">Destinos que Inspiran</h2>
+                    <p class="section__subtitle">
+                        Cada ubicación en Astro Resorts es una joya única, cuidadosamente seleccionada para ofrecer 
+                        una experiencia inolvidable bajo el cielo estrellado.
+                    </p>
+                </div>
+                <div class="grid grid--3" id="destinosGrid">
+                    <!-- Destinos will be rendered by JS -->
+                </div>
+                <div class="section__cta reveal" style="text-align: center; margin-top: var(--space-8);">
+                    <a href="paquetes.html" class="btn btn--outline">Ver Todos los Paquetes</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiencia Astro -->
+        <section class="section section--dark" aria-labelledby="experiencia-title">
+            <div class="container">
+                <div class="section__header section__header--center reveal">
+                    <span class="section__eyebrow">La Experiencia Astro</span>
+                    <h2 id="experiencia-title" class="section__title">Una Noche, Infinitas Posibilidades</h2>
+                    <p class="section__subtitle">
+                        Desde el momento en que pisas nuestras instalaciones, el universo se abre ante ti.
+                    </p>
+                </div>
+                <div class="grid grid--4" id="experienciaGrid">
+                    <!-- Experiencias will be rendered by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section class="section section--light" aria-labelledby="testimonios-title">
+            <div class="container">
+                <div class="section__header section__header--center reveal">
+                    <span class="section__eyebrow">Testimonios</span>
+                    <h2 id="testimonios-title" class="section__title">Lo que Dicen Nuestros Viajeros</h2>
+                </div>
+                <div class="testimonios-slider reveal" id="testimoniosSlider" role="region" aria-label="Testimonios de clientes" aria-live="polite">
+                    <!-- Testimonios will be rendered by JS -->
+                </div>
+                <div class="testimonios-dots" id="testimoniosDots" aria-label="Navegación de testimonios">
+                    <!-- Dots will be rendered by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter / CTA -->
+        <section class="section section--dark section--newsletter" aria-labelledby="newsletter-title">
+            <div class="container">
+                <div class="newsletter__content reveal">
+                    <h2 id="newsletter-title" class="newsletter__title">Únete al Cosmos Club</h2>
+                    <p class="newsletter__text">
+                        Suscríbete y recibe ofertas exclusivas, guías de viaje y acceso anticipado a nuevos destinos.
+                    </p>
+                    <form class="newsletter__form" id="newsletterForm" novalidate>
+                        <div class="form-group">
+                            <label for="newsletterEmail" class="form-label visually-hidden">Tu correo electrónico</label>
+                            <input type="email" id="newsletterEmail" placeholder="Tu correo electrónico" class="form-input" required autocomplete="email">
+                            <span class="form-error">Por favor ingresa un correo válido</span>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--sm">Suscribirme</button>
+                    </form>
+                    <p class="newsletter__legal">Sin compromiso. Cancela cuando quieras. <a href="terminos-y-condiciones.html">Términos y condiciones</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Links to Other Views -->
+        <section class="section section--light" aria-labelledby="explore-title">
+            <div class="container">
+                <div class="section__header section__header--center reveal">
+                    <span class="section__eyebrow">Explora Más</span>
+                    <h2 id="explore-title" class="section__title">Descubre Todo lo que Ofrecemos</h2>
+                </div>
+                <div class="grid grid--3" id="quickLinksGrid">
+                    <!-- Quick links will be rendered by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container footer__container">
+            <div class="footer__brand reveal">
+                <a href="index.html" class="logo">Astro<span>Resorts</span></a>
+                <p class="footer__tagline">Donde el lujo se encuentra con el cosmos.</p>
+            </div>
+            <div class="footer__links">
+                <div class="footer__col reveal">
+                    <h4 class="footer__title">Destinos</h4>
+                    <ul class="footer__list">
+                        <li><a href="paquetes.html#maldivas">Maldivas del Norte</a></li>
+                        <li><a href="paquetes.html#andino">Santuario Andino</a></li>
+                        <li><a href="paquetes.html#desierto">Oasis del Desierto</a></li>
+                        <li><a href="paquetes.html#helando">Archipiélago Helado</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col reveal">
+                    <h4 class="footer__title">Compañía</h4>
+                    <ul class="footer__list">
+                        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="terminos-y-condiciones.html">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col reveal">
+                    <h4 class="footer__title">Contacto</h4>
+                    <ul class="footer__list">
+                        <li><a href="mailto:reservas@astroresorts.com" class="footer__contact">reservas@astroresorts.com</a></li>
+                        <li><a href="tel:+15550210278" class="footer__contact">+1 (555) 0210-ASTRO</a></li>
+                        <li><address class="footer__contact">Carretera Estelar 127, Nebulosa Central</address></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p class="footer__copyright">
+                    &copy; 2026 Astro Resorts. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/index.js"></script>
+</body>
+</html>
