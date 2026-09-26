@@ -5,19 +5,19 @@ const packageData = [
         title: 'Aurora Privada',
         location: 'Archipiélago Helado',
         category: 'romance',
-        description: 'Una escapada íntima bajo la aurora austral, con cena privada, spa y suite panorámica de cristal.',
-        features: ['3 noches en suite aurora', 'Cena privada bajo las estrellas', 'Spa cósmico para dos', 'Traslados privados'],
+        description: 'Una escapada íntima con cena privada, spa y suite panorámica de cristal.',
+        features: ['3 noches en suite aurora', 'Cena privada romántica', 'Spa para dos', 'Traslados privados'],
         price: '$2.850',
         cta: 'Reservar experiencia'
     },
     {
         id: 'andino',
         tag: 'Aventura',
-        title: 'Ruta de las Estrellas',
+        title: 'Ruta Andina',
         location: 'Santuario Andino',
         category: 'adventure',
         description: 'Senderos de altura, aguas termales y noches de observación guiada en el corazón de los Andes.',
-        features: ['4 noches de montaña', 'Observatorio premium', 'Termas galácticas', 'Guía astronómico'],
+        features: ['4 noches de montaña', 'Observación premium', 'Termas naturales', 'Guía especializado'],
         price: '$1.980',
         cta: 'Reservar aventura'
     },
@@ -35,10 +35,10 @@ const packageData = [
     {
         id: 'maldivas',
         tag: 'Premium',
-        title: 'Luna sobre el Mar',
+        title: 'Villa sobre el Mar',
         location: 'Maldivas del Norte',
         category: 'romance',
-        description: 'Villa flotante, mayordomo personal y una noche de cine privado sobre el océano Índico.',
+        description: 'Villa flotante, mayordomo personal y una noche de cine privado.',
         features: ['5 noches en villa flotante', 'Mayordomo personal', 'Cena en el agua', 'Snorkel guiado'],
         price: '$4.120',
         cta: 'Reservar lujo'
@@ -46,22 +46,22 @@ const packageData = [
     {
         id: 'cosmos',
         tag: 'Expedición',
-        title: 'Expedición Cosmos',
+        title: 'Expedición Andina',
         location: 'Santuario Andino',
         category: 'adventure',
-        description: 'Una inmersión completa para amantes de la astronomía: telescopios, charlas y campamento estelar.',
-        features: ['6 noches de expedición', 'Telescopio robótico', 'Campamento estelar', 'Fotografía astronómica'],
+        description: 'Telescopios, charlas y campamento premium para amantes de la naturaleza.',
+        features: ['6 noches de expedición', 'Telescopio robótico', 'Campamento premium', 'Fotografía nocturna'],
         price: '$3.360',
         cta: 'Unirme a la expedición'
     },
     {
         id: 'wellness',
         tag: 'Bienestar',
-        title: 'Reset Cósmico',
+        title: 'Reset Wellness',
         location: 'Oasis del Desierto',
         category: 'relax',
-        description: 'Programa de bienestar integral con terapias, nutrición estelar y silencios al atardecer.',
-        features: ['7 noches de bienestar', 'Programa personalizado', 'Terapias energéticas', 'Chef nutricional'],
+        description: 'Programa de bienestar integral con terapias, nutrición y silencios al atardecer.',
+        features: ['7 noches de bienestar', 'Programa personalizado', 'Terapias relajantes', 'Chef nutricional'],
         price: '$3.780',
         cta: 'Empezar el reset'
     }
@@ -255,8 +255,8 @@ function initHeader() {
     const header = document.querySelector('.header');
     window.addEventListener('scroll', () => {
         const isScrolled = window.scrollY > 80;
-        header.style.background = isScrolled ? 'rgba(10, 10, 18, .96)' : '';
-        header.style.borderBottomColor = isScrolled ? 'rgba(139, 92, 246, .3)' : '';
+        header.style.background = isScrolled ? 'rgba(253, 251, 247, .96)' : '';
+        header.style.borderBottomColor = isScrolled ? 'rgba(196, 168, 130, .3)' : '';
     }, { passive: true });
 }
 

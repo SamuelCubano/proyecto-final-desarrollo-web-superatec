@@ -1,21 +1,21 @@
 const servicesData = [
     {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L15 8H21L13 12L16 18L12 14L8 18L11 12L3 8H9L12 2Z"/></svg>`,
-        title: 'Observatorio Premium',
-        text: 'Telescopios robóticos guiados por astrónomos. Sesiones privadas y charlas para todos los niveles.',
-        features: ['Telescopio robótico', 'Guía astronómico', 'Fotografía astral']
+        title: 'Observación Premium',
+        text: 'Telescopios profesionales con sesiones privadas y guía especializada.',
+        features: ['Equipo profesional', 'Guía especializada', 'Fotografía nocturna']
     },
     {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16t-2-2V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V8a2 2 0 0 1 2-2v6a2 2 0 0 0 2 2h2Z"/><path d="M10 16V9a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2Z"/></svg>`,
-        title: 'Wellness Cósmico',
-        text: 'Spa con rituales energéticos, saunas, piscinas y programas personalizados de bienestar.',
-        features: ['Spa exclusivo', 'Terapias estelares', 'Programa personalizado']
+        title: 'Wellness & Spa',
+        text: 'Spa con rituales relajantes, saunas, piscinas y programas personalizados de bienestar.',
+        features: ['Spa exclusivo', 'Terapias relajantes', 'Programa personalizado']
     },
     {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7a2 2 0 0 1 0-4h14a2 2 0 0 1 2 2Z"/><path d="M21 9a2 2 0 0 1-2 2H7a2 2 0 0 1 0-4h14a2 2 0 0 1 2 2Z"/></svg>`,
-        title: 'Cocina Estelar',
+        title: 'Cocina Gourmet',
         text: 'Menús creados por chefs con ingredientes locales y una experiencia sensorial única.',
-        features: ['Chef residente', 'Menú degustación', 'Cenas bajo las estrellas']
+        features: ['Chef residente', 'Menú degustación', 'Cenas románticas']
     },
     {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
@@ -27,7 +27,7 @@ const servicesData = [
 
 const extrasData = [
     {
-        title: 'Traslados blindados',
+        title: 'Traslados Privados',
         text: 'Vehículos exclusivos desde el aeropuerto al resort con chofer bilingüe.'
     },
     {
@@ -36,7 +36,7 @@ const extrasData = [
     },
     {
         title: 'Experiencias privadas',
-        text: 'Cenas románticas, rutas guiadas y observaciones exclusivas solo para ti.'
+        text: 'Cenas románticas, rutas guiadas y experiencias exclusivas solo para ti.'
     },
     {
         title: 'Sostenibilidad activa',
@@ -110,8 +110,8 @@ function initHeader() {
     const header = document.querySelector('.header');
     window.addEventListener('scroll', () => {
         const isScrolled = window.scrollY > 80;
-        header.style.background = isScrolled ? 'rgba(10, 10, 18, .96)' : '';
-        header.style.borderBottomColor = isScrolled ? 'rgba(139, 92, 246, .3)' : '';
+        header.style.background = isScrolled ? 'rgba(253, 251, 247, .96)' : '';
+        header.style.borderBottomColor = isScrolled ? 'rgba(196, 168, 130, .3)' : '';
     }, { passive: true });
 }
 

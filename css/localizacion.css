@@ -10,7 +10,7 @@
     position: relative;
     min-height: 340px;
     padding: var(--space-8);
-    border: 1px solid rgba(139, 92, 246, .14);
+    border: 1px solid rgba(61, 50, 38, 0.08);
     border-radius: var(--radius-xl);
     background: var(--gradient-card);
     transition: all var(--transition-slow);
@@ -28,7 +28,7 @@
 
 .location-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(167, 139, 250, .4);
+    border-color: rgba(196, 168, 130, 0.35);
 }
 
 .location-card:hover::before {
@@ -55,7 +55,7 @@
 .location-card__text {
     position: relative;
     margin-bottom: var(--space-4);
-    color: var(--color-gray-400);
+    color: var(--color-beige-700);
     line-height: var(--lh-relaxed);
 }
 
@@ -64,7 +64,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-3);
-    color: var(--color-cyan-300);
+    color: var(--color-sage-500);
     font-size: var(--fs-sm);
 }
 
@@ -76,20 +76,20 @@
 
 .experience-card {
     padding: var(--space-8);
-    border: 1px solid rgba(139, 92, 246, .14);
+    border: 1px solid rgba(61, 50, 38, 0.08);
     border-radius: var(--radius-xl);
-    background: rgba(15, 17, 23, .65);
+    background: rgba(253, 251, 247, 0.7);
     transition: all var(--transition-slow);
 }
 
 .experience-card:hover {
-    border-color: rgba(167, 139, 250, .35);
+    border-color: rgba(196, 168, 130, 0.35);
     transform: translateY(-5px);
 }
 
 .experience-card__icon {
     margin-bottom: var(--space-4);
-    color: var(--color-purple-400);
+    color: var(--color-terracotta-500);
 }
 
 .experience-card__icon svg {
@@ -104,7 +104,7 @@
 }
 
 .experience-card__text {
-    color: var(--color-gray-400);
+    color: var(--color-beige-700);
     font-size: var(--fs-sm);
     line-height: var(--lh-relaxed);
 }

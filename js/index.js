@@ -5,21 +5,21 @@ const destinosData = [
     {
         id: 'maldivas',
         title: 'Maldivas del Norte',
-        description: 'Villa flotante privada con vistas a la aurora boreal.',
+        description: 'Villa flotante privada con vistas al océano.',
         image: '../img/destino-1.svg',
         link: 'paquetes.html#maldivas'
     },
     {
         id: 'andino',
         title: 'Santuario Andino',
-        description: 'Refugio de montaña con spa de tierras termales galácticas.',
+        description: 'Refugio de montaña con spa de tierras termales.',
         image: '../img/destino-2.svg',
         link: 'paquetes.html#andino'
     },
     {
         id: 'desierto',
         title: 'Oasis del Desierto',
-        description: 'Palmeras de cristal y lagos de sal bajo el sol de medianoche.',
+        description: 'Palmeras y lagos de sal en un entorno natural único.',
         image: '../img/destino-3.svg',
         link: 'paquetes.html#desierto'
     }
@@ -28,41 +28,41 @@ const destinosData = [
 const experienciasData = [
     {
         icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15 8H21L13 12L16 18L12 14L8 18L11 12L3 8H9L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-        title: 'Estrellas de Lujo',
-        description: 'Suites con techos de cristal que se abren al cosmos.'
+        title: 'Suites de Lujo',
+        description: 'Suites con techos de cristal y vistas panorámicas.'
     },
     {
         icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM12 20C7.59 18.76 4.5 15.22 4.5 10.5C4.5 6.91 7.17 3.5 11 3.5C14.83 3.5 17.5 6.91 17.5 10.5C17.5 15.22 14.41 18.76 12 20Z" fill="currentColor"/></svg>`,
-        title: 'Observatorio Premium',
-        description: 'Telescopios profesionales con guía de astrónomos galácticos.'
+        title: 'Observación Premium',
+        description: 'Telescopios profesionales con guía especializada.'
     },
     {
         icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a2 2 0 0 1-2 2H7a2 2 0 0 1 0-4h14a2 2 0 0 1 2 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9a2 2 0 0 1-2 2H7a2 2 0 0 1 0-4h14a2 2 0 0 1 2 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-        title: 'Cocina Estelar',
-        description: 'Menús creados por chefs con ingredientes de múltiples mundos.'
+        title: 'Cocina Gourmet',
+        description: 'Menús creados por chefs con ingredientes locales y de temporada.'
     },
     {
         icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16t-2-2V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V8a2 2 0 0 1 2-2v6a2 2 0 0 0 2 2h2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 16V9a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-        title: 'Wellness Cósmico',
-        description: 'Spas con terapias de energía estelar y vibraciones galácticas.'
+        title: 'Wellness & Spa',
+        description: 'Spas con terapias relajantes y programas de bienestar.'
     }
 ];
 
 const testimoniosData = [
     {
-        text: '"Una experiencia que trasciende la tierra. Dormir bajo el cosmos fue mágico, y el servicio impecable superó todas mis expectativas."',
+        text: '"Una experiencia inolvidable. El servicio impecable superó todas mis expectativas."',
         name: 'María Elena R.',
         role: 'Viajera Frecuente',
         avatar: 'M'
     },
     {
-        text: '"Las suites con techos de cristal abiertos al cosmos fueron simplemente espectaculares. Nunca había visto tanto asombro en una sola noche."',
+        text: '"Las suites con techos de cristal fueron espectaculares. Una experiencia única que recomiendo totalmente."',
         name: 'Carlos D.',
         role: 'Astrónomo Profesional',
         avatar: 'C'
     },
     {
-        text: '"El wellness cósmico mejoró mi bienestar más de lo que imaginaba. Cualquier viaje futuro debe incluir Astro Resorts."',
+        text: '"El wellness mejoró mi bienestar más de lo que imaginaba. Volveré sin duda."',
         name: 'Sofía M.',
         role: 'Influencer de Viajes',
         avatar: 'S'
@@ -73,13 +73,13 @@ const quickLinksData = [
     {
         icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
         title: 'Paquetes Exclusivos',
-        description: 'Descubre nuestros paquetes todo incluido para una experiencia cósmica completa.',
+        description: 'Descubre nuestros paquetes todo incluido para una experiencia completa.',
         link: 'paquetes.html'
     },
     {
         icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16t-2-2V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V8a2 2 0 0 1 2-2v6a2 2 0 0 0 2 2h2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 16V9a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
         title: 'Servicios Premium',
-        description: 'Desde observatorios hasta spa cósmico, todo lo que necesitas para tu estancia perfecta.',
+        description: 'Desde observación hasta spa, todo lo que necesitas para tu estancia perfecta.',
         link: 'servicios.html'
     },
     {
@@ -89,37 +89,6 @@ const quickLinksData = [
         link: 'localizacion.html'
     }
 ];
-
-// ===== UTILITY FUNCTIONS =====
-function createStarfield() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    const starCount = 120;
-    const fragment = document.createDocumentFragment();
-
-    for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('div');
-        star.classList.add('hero__star');
-
-        const size = Math.random() * 3 + 1;
-        const posX = Math.random() * 100;
-        const posY = Math.random() * 100;
-        const opacity = Math.random() * 0.6 + 0.2;
-        const animDelay = Math.random() * 4;
-
-        star.style.width = `${size}px`;
-        star.style.height = `${size}px`;
-        star.style.left = `${posX}%`;
-        star.style.top = `${posY}%`;
-        star.style.opacity = `${opacity}`;
-        star.style.animationDelay = `${animDelay}s`;
-
-        fragment.appendChild(star);
-    }
-
-    hero.appendChild(fragment);
-}
 
 // ===== RENDER FUNCTIONS =====
 function renderDestinos() {
@@ -360,11 +329,11 @@ function initHeaderScroll() {
         const currentScroll = window.scrollY;
         
         if (currentScroll > threshold) {
-            header.style.background = 'rgba(10, 10, 18, 0.95)';
-            header.style.borderBottomColor = 'rgba(139, 92, 246, 0.3)';
+            header.style.background = 'rgba(253, 251, 247, 0.95)';
+            header.style.borderBottomColor = 'rgba(196, 168, 130, 0.25)';
         } else {
-            header.style.background = 'rgba(10, 10, 18, 0.85)';
-            header.style.borderBottomColor = 'rgba(139, 92, 246, 0.15)';
+            header.style.background = 'rgba(253, 251, 247, 0.85)';
+            header.style.borderBottomColor = 'rgba(196, 168, 130, 0.15)';
         }
         
         lastScroll = currentScroll;
@@ -390,7 +359,6 @@ function initActiveNav() {
 
 // ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', () => {
-    createStarfield();
     renderDestinos();
     renderExperiencias();
     renderTestimonios();

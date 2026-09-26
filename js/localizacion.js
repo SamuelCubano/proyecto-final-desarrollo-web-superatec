@@ -2,15 +2,15 @@ const locationData = [
     {
         id: 'maldivas',
         title: 'Maldivas del Norte',
-        text: 'Villas flotantes y cielo despejado todo el año para observar constelaciones desde el mar.',
+        text: 'Villas flotantes y cielo despejado todo el año para disfrutar del paisaje desde el mar.',
         image: '../img/destino-1.svg',
-        meta: ['Auroras visibles', 'Traslado privado', 'Buceo estelar'],
+        meta: ['Puestas de sol visibles', 'Traslado privado', 'Buceo premium'],
         gradient: 'linear-gradient(135deg, #38bdf8, #8b5cf6)'
     },
     {
         id: 'andino',
         title: 'Santuario Andino',
-        text: 'Un refugio de montaña donde el aire puro convierte cada noche en un planetario natural.',
+        text: 'Un refugio de montaña donde el aire puro convierte cada noche en un entorno natural privilegiado.',
         image: '../img/destino-2.svg',
         meta: ['Observatorio 24h', 'Aguas termales', 'Rutas guiadas'],
         gradient: 'linear-gradient(135deg, #8b5cf6, #38bdf8)'
@@ -26,9 +26,9 @@ const locationData = [
     {
         id: 'helando',
         title: 'Archipiélago Helado',
-        text: 'Iglús de cristal bajo la aurora austral. Uno de los cielos más oscuros del planeta.',
+        text: 'Iglús de cristal bajo la puesta de sol. Uno de los cielos más oscuros del planeta.',
         image: '../img/destino-4.svg',
-        meta: ['Aurora austral', 'Expediciones', 'Suite hielo'],
+        meta: ['Puesta de sol', 'Expediciones', 'Suite hielo'],
         gradient: 'linear-gradient(135deg, #38bdf8, #a78bfa)'
     }
 ];
@@ -37,7 +37,7 @@ const experienceData = [
     {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L15 8H21L13 12L16 18L12 14L8 18L11 12L3 8H9L12 2Z"/></svg>`,
         title: 'Cielos certificados',
-        text: 'Seleccionamos ubicaciones con baja contaminación lumínica para maximizar la observación.'
+        text: 'Seleccionamos ubicaciones con entornos naturales privilegiados para maximizar la observación.'
     },
     {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16t-2-2V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V8a2 2 0 0 1 2-2v6a2 2 0 0 0 2 2h2Z"/><path d="M10 16V9a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2Z"/></svg>`,
@@ -47,7 +47,7 @@ const experienceData = [
     {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
         title: 'Guías locales',
-        text: 'Expertos en astronomía, ecología y cultura local que enriquecen cada recorrido.'
+        text: 'Expertos en naturaleza, ecología y cultura local que enriquecen cada recorrido.'
     },
     {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
@@ -120,8 +120,8 @@ function initHeader() {
     const header = document.querySelector('.header');
     window.addEventListener('scroll', () => {
         const isScrolled = window.scrollY > 80;
-        header.style.background = isScrolled ? 'rgba(10, 10, 18, .96)' : '';
-        header.style.borderBottomColor = isScrolled ? 'rgba(139, 92, 246, .3)' : '';
+        header.style.background = isScrolled ? 'rgba(253, 251, 247, .96)' : '';
+        header.style.borderBottomColor = isScrolled ? 'rgba(196, 168, 130, .3)' : '';
     }, { passive: true });
 }
 

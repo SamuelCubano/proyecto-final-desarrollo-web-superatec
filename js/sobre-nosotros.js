@@ -10,26 +10,26 @@ const timelineData = [
     {
         year: '2012',
         title: 'Primer Resort: Maldivas del Norte',
-        text: 'Inauguración del primer resort con villas flotantes y techos de cristal para observación estelar.'
+        text: 'Inauguración del primer resort con villas flotantes y techos de cristal para observación nocturna.'
     },
     {
         year: '2015',
         title: 'Expansión Global',
-        text: 'Apertura de Santuario Andino y Oasis del Desierto. El concepto de "lujo cósmico" gana reconocimiento internacional.'
+        text: 'Apertura de Santuario Andino y Oasis del Desierto. El concepto de "experiencias de lujo" gana reconocimiento internacional.'
     },
     {
         year: '2018',
         title: 'Innovación Tecnológica',
-        text: 'Lanzamiento de telescopios robóticos controlados por huéspedes y app de realidad aumentada para navegación estelar.'
+        text: 'Lanzamiento de telescopios robóticos controlados por huéspedes y app de realidad aumentada para navegación nocturna.'
     },
     {
         year: '2021',
         title: 'Archipiélago Helado',
-        text: 'Cuarto destino en la Antártida: iglús de cristal con vista a la aurora austral. Premio World Luxury Hotel Awards.'
+        text: 'Cuarto destino en la Antártida: iglús de cristal con vista a la puesta de sol. Premio World Luxury Hotel Awards.'
     },
     {
         year: '2024',
-        title: 'Cosmos Club & Sostenibilidad',
+        title: 'Excellence Club & Sostenibilidad',
         text: 'Lanzamiento del programa de fidelidad y compromiso carbono-neutral para 2030. Más de 50,000 huéspedes atendidos.'
     }
 ];
@@ -37,13 +37,13 @@ const timelineData = [
 const valuesData = [
     {
         icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15 8H21L13 12L16 18L12 14L8 18L11 12L3 8H9L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-        title: 'Excelencia Estelar',
+        title: 'Excelencia en el Servicio',
         text: 'Superamos expectativas en cada detalle, desde la calidad del servicio hasta la perfección de cada experiencia.'
     },
     {
         icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM12 20C7.59 18.76 4.5 15.22 4.5 10.5C4.5 6.91 7.17 3.5 11 3.5C14.83 3.5 17.5 6.91 17.5 10.5C17.5 15.22 14.41 18.76 12 20Z" fill="currentColor"/></svg>`,
-        title: 'Conexión Cósmica',
-        text: 'Creemos que mirar las estrellas nos conecta con algo mayor. Diseñamos espacios para esa conexión.'
+        title: 'Conexión con la Naturaleza',
+        text: 'Creemos que estar en entornos naturales nos conecta con algo mayor. Diseñamos espacios para esa conexión.'
     },
     {
         icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a2 2 0 0 1-2 2H7a2 2 0 0 1 0-4h14a2 2 0 0 1 2 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9a2 2 0 0 1-2 2H7a2 2 0 0 1 0-4h14a2 2 0 0 1 2 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
@@ -52,12 +52,12 @@ const valuesData = [
     },
     {
         icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-        title: 'Sostenibilidad Galáctica',
+        title: 'Sostenibilidad',
         text: 'Protegemos los entornos que nos albergan. Operaciones carbono-neutral y conservación activa.'
     },
     {
         icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16t-2-2V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V8a2 2 0 0 1 2-2v6a2 2 0 0 0 2 2h2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 16V9a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-        title: 'Bienestar Integral',
+        title: 'Wellness Integral',
         text: 'Cuerpo, mente y espíritu. Nuestros programas de wellness nutren todas las dimensiones del ser.'
     },
     {
@@ -82,26 +82,26 @@ const teamData = [
     },
     {
         name: 'Dra. Sofia Nilsson',
-        role: 'Directora de Experiencia Cósmica',
+        role: 'Directora de Experiencia',
         bio: 'Astrofísica especializada en divulgación. Diseña programas de observación para todos los niveles.',
         initial: 'SN'
     },
     {
         name: 'Chef Antonio Rossi',
         role: 'Director Gastronómico',
-        bio: 'Estrella Michelin. Creador de menús "estelares" con ingredientes de cultivo hidropónico local.',
+        bio: 'Estrella Michelin. Creador de menús gourmet con ingredientes de cultivo hidropónico local.',
         initial: 'AR'
     },
     {
         name: 'Luna Patel',
         role: 'Directora de Wellness',
-        bio: 'Experta en medicina integrativa y terapias energéticas. Desarrolló el protocolo "Wellness Cósmico".',
+        bio: 'Experta en medicina integrativa y terapias relajantes. Desarrolló el protocolo "Wellness & Spa".',
         initial: 'LP'
     },
     {
         name: 'Carlos Mendoza',
         role: 'Director de Operaciones',
-        bio: 'Ex-Ritz Carlton. Garantiza que cada detalle operativo alcance la perfección estelar.',
+        bio: 'Ex-Ritz Carlton. Garantiza que cada detalle operativo alcance la perfección.',
         initial: 'CM'
     }
 ];
@@ -109,21 +109,21 @@ const teamData = [
 const statsData = [
     { number: '50000+', label: 'Huéspedes Satisfechos' },
     { number: '4', label: 'Destinos Únicos' },
-    { number: '150+', label: 'Experiencias Cósmicas' },
+    { number: '150+', label: 'Experiencias Exclusivas' },
     { number: '98%', label: 'Satisfacción' },
-    { number: '24/7', label: 'Soporte Estelar' },
+    { number: '24/7', label: 'Soporte Premium' },
     { number: '2030', label: 'Carbono Neutral' }
 ];
 
 const missionVisionData = [
     {
         type: 'Misión',
-        text: 'Inspirar asombro y conexión humana a través de experiencias de lujo bajo el cosmos, combinando hospitalidad excepcional, innovación tecnológica y respeto por el universo que nos rodea.',
+        text: 'Inspirar asombro y conexión humana a través de experiencias de lujo en la naturaleza, combinando hospitalidad excepcional, innovación tecnológica y respeto por el mundo que nos rodea.',
         icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15 8H21L13 12L16 18L12 14L8 18L11 12L3 8H9L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`
     },
     {
         type: 'Visión',
-        text: 'Ser la marca de hospitalidad más inspiradora del mundo, donde cada estancia transforma la perspectiva del huésped sobre su lugar en el cosmos, creando recuerdos que duran toda una vida.',
+        text: 'Ser la marca de hospitalidad más inspiradora del mundo, donde cada estancia transforma la perspectiva del huésped sobre su lugar en el mundo, creando recuerdos que duran toda una vida.',
         icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM12 20C7.59 18.76 4.5 15.22 4.5 10.5C4.5 6.91 7.17 3.5 11 3.5C14.83 3.5 17.5 6.91 17.5 10.5C17.5 15.22 14.41 18.76 12 20Z" fill="currentColor"/></svg>`
     }
 ];
@@ -295,11 +295,11 @@ function initHeaderScroll() {
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
-            header.style.background = 'rgba(10, 10, 18, 0.95)';
-            header.style.borderBottomColor = 'rgba(139, 92, 246, 0.3)';
+            header.style.background = 'rgba(253, 251, 247, 0.95)';
+            header.style.borderBottomColor = 'rgba(196, 168, 130, 0.3)';
         } else {
-            header.style.background = 'rgba(10, 10, 18, 0.85)';
-            header.style.borderBottomColor = 'rgba(139, 92, 246, 0.15)';
+            header.style.background = 'rgba(253, 251, 247, 0.85)';
+            header.style.borderBottomColor = 'rgba(196, 168, 130, 0.15)';
         }
     }, { passive: true });
 }

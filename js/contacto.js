@@ -49,8 +49,8 @@ function initHeader() {
 
     window.addEventListener('scroll', () => {
         const isScrolled = window.scrollY > 80;
-        header.style.background = isScrolled ? 'rgba(10, 10, 18, .96)' : '';
-        header.style.borderBottomColor = isScrolled ? 'rgba(139, 92, 246, .3)' : '';
+        header.style.background = isScrolled ? 'rgba(253, 251, 247, .96)' : '';
+        header.style.borderBottomColor = isScrolled ? 'rgba(196, 168, 130, .3)' : '';
     }, { passive: true });
 }
 
@@ -98,7 +98,7 @@ function initSupportChat() {
     if (!openSupport) return;
 
     openSupport.addEventListener('click', () => {
-        alert('Chat estelar: conéctate en menos de 5 minutos por este medio. Soporte 24/7.');
+        alert('Chat de soporte: conéctate en menos de 5 minutos por este medio. Soporte 24/7.');
     });
 }
 

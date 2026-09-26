@@ -12,7 +12,7 @@
 
 .contact-card {
     padding: var(--space-8);
-    border: 1px solid rgba(139, 92, 246, .12);
+    border: 1px solid rgba(61, 50, 38, 0.08);
     border-radius: var(--radius-xl);
     background: var(--gradient-card);
     transition: all var(--transition-slow);
@@ -20,7 +20,7 @@
 
 .contact-card:hover {
     transform: translateY(-6px);
-    border-color: rgba(167, 139, 250, .38);
+    border-color: rgba(196, 168, 130, 0.35);
 }
 
 .contact-card__icon {
@@ -31,14 +31,14 @@
     height: 56px;
     margin-bottom: var(--space-5);
     border-radius: var(--radius-lg);
-    background: rgba(139, 92, 246, .15);
-    color: var(--color-purple-300);
+    background: rgba(196, 168, 130, 0.15);
+    color: var(--color-terracotta-400);
     font-size: var(--fs-2xl);
     transition: all var(--transition-normal);
 }
 
 .contact-card:hover .contact-card__icon {
-    background: rgba(139, 92, 246, .25);
+    background: rgba(196, 168, 130, 0.25);
     transform: scale(1.05);
 }
 
@@ -51,18 +51,18 @@
 .contact-card__value {
     display: block;
     margin-bottom: var(--space-2);
-    color: var(--color-white);
+    color: var(--color-beige-900);
     font-weight: var(--fw-semibold);
     text-decoration: none;
     transition: color var(--transition-normal);
 }
 
 .contact-card__value:hover {
-    color: var(--color-cyan-300);
+    color: var(--color-terracotta-400);
 }
 
 .contact-card__note {
-    color: var(--color-gray-400);
+    color: var(--color-beige-700);
     font-size: var(--fs-sm);
 }
 
@@ -80,9 +80,9 @@
 
 .contact-form {
     padding: var(--space-10);
-    border: 1px solid rgba(139, 92, 246, .14);
+    border: 1px solid rgba(61, 50, 38, 0.08);
     border-radius: var(--radius-xl);
-    background: rgba(15, 17, 23, .7);
+    background: rgba(253, 251, 247, 0.8);
 }
 
 .contact-form .form-row {
