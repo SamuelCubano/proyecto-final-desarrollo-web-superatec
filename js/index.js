@@ -1,27 +1,38 @@
 /* ===== INDEX.JS - ASTRO RESORTS HOME ===== */
 
 // ===== DATA =====
+// Las tres imágenes de destino son fotos reales con licencia de Pexels
+// (uso libre, sin atribución obligatoria), recortadas a 800x520:
+//   astro-destino-1.jpg -> "Stunning Aerial View of Maldives Resort",
+//                          Asad Photo Maldives
+//   astro-destino-2.jpg -> "Stunning Andes Mountains Landscape in Peru",
+//                          Mundo DR
+//   astro-destino-3.jpg -> "Sand Dunes During Golden Hour" (Huacachina, Peru)
+// El fondo del hero (astro-hero-bg.svg) es una ilustración propia del proyecto.
+// Las anclas #maldivas / #andino / #desierto / #helando no existen todavía
+// en paquetes.html (se corrige en la vista de paquetes), así que el home
+// enlaza a la página completa en vez de mandar a un ancla muerta.
 const destinosData = [
     {
         id: 'maldivas',
         title: 'Maldivas del Norte',
         description: 'Villa flotante privada con vistas al océano.',
-        image: '../img/destino-1.svg',
-        link: 'paquetes.html#maldivas'
+        image: '../img/astro-destino-1.jpg',
+        link: 'paquetes.html'
     },
     {
         id: 'andino',
         title: 'Santuario Andino',
         description: 'Refugio de montaña con spa de tierras termales.',
-        image: '../img/destino-2.svg',
-        link: 'paquetes.html#andino'
+        image: '../img/astro-destino-2.jpg',
+        link: 'paquetes.html'
     },
     {
         id: 'desierto',
         title: 'Oasis del Desierto',
         description: 'Palmeras y lagos de sal en un entorno natural único.',
-        image: '../img/destino-3.svg',
-        link: 'paquetes.html#desierto'
+        image: '../img/astro-destino-3.jpg',
+        link: 'paquetes.html'
     }
 ];
 
@@ -97,7 +108,7 @@ function renderDestinos() {
 
     grid.innerHTML = destinosData.map((destino, index) => `
         <article class="card reveal" style="animation-delay: ${index * 100}ms">
-            <div class="card__image" style="background-image: url('${destino.image}')" aria-hidden="true"></div>
+            <div class="card__image is-loading" data-src="${destino.image}" role="img" aria-label="${destino.title}"></div>
             <div class="card__content">
                 <h3 class="card__title">${destino.title}</h3>
                 <p class="card__text">${destino.description}</p>
@@ -110,6 +121,25 @@ function renderDestinos() {
             </div>
         </article>
     `).join('');
+
+    // Fade each image in once decoded, instead of popping in abruptly
+    grid.querySelectorAll('.card__image[data-src]').forEach(el => {
+        const img = new Image();
+        const settle = () => {
+            el.classList.remove('is-loading');
+            el.classList.add('is-loaded');
+        };
+
+        img.onload = () => {
+            el.style.backgroundImage = `url('${el.dataset.src}')`;
+            settle();
+        };
+        img.onerror = () => {
+            el.style.backgroundImage = 'none';
+            settle();
+        };
+        img.src = el.dataset.src;
+    });
 }
 
 function renderExperiencias() {
@@ -131,6 +161,8 @@ function renderTestimonios() {
     if (!slider || !dotsContainer) return;
 
     let currentIndex = 0;
+    let autoAdvance = null;
+    let isPaused = false;
 
     function renderSlide(index) {
         const t = testimoniosData[index];
@@ -151,8 +183,8 @@ function renderTestimonios() {
     }
 
     function renderDots() {
-        dotsContainer.innerHTML = testimoniosData.map((_, i) => 
-            `<button class="dot ${i === 0 ? 'dot--active' : ''}" data-dot="${i}" aria-label="Ir al testimonio ${i + 1}" ${i === 0 ? 'aria-current="true"' : ''}></button>`
+        dotsContainer.innerHTML = testimoniosData.map((_, i) =>
+            `<button class="dot ${i === 0 ? 'dot--active' : ''}" data-dot="${i}" type="button" aria-label="Ir al testimonio ${i + 1}" ${i === 0 ? 'aria-current="true"' : 'aria-current="false"'}></button>`
         ).join('');
 
         dotsContainer.querySelectorAll('.dot').forEach(dot => {
@@ -171,23 +203,54 @@ function renderTestimonios() {
         });
     }
 
-    // Auto-advance
-    let autoAdvance = setInterval(() => {
-        currentIndex = (currentIndex + 1) % testimoniosData.length;
+    function goTo(index) {
+        currentIndex = (index + testimoniosData.length) % testimoniosData.length;
         updateSlider();
-    }, 5000);
+    }
 
-    // Pause on hover
-    slider.addEventListener('mouseenter', () => clearInterval(autoAdvance));
-    slider.addEventListener('mouseleave', () => {
-        autoAdvance = setInterval(() => {
-            currentIndex = (currentIndex + 1) % testimoniosData.length;
-            updateSlider();
-        }, 5000);
+    function startAutoAdvance() {
+        stopAutoAdvance();
+        if (isPaused) return;
+        autoAdvance = setInterval(() => goTo(currentIndex + 1), 5000);
+    }
+
+    function stopAutoAdvance() {
+        if (autoAdvance) {
+            clearInterval(autoAdvance);
+            autoAdvance = null;
+        }
+    }
+
+    // Pause on hover and on keyboard focus
+    slider.addEventListener('mouseenter', stopAutoAdvance);
+    slider.addEventListener('mouseleave', startAutoAdvance);
+    slider.addEventListener('focusin', stopAutoAdvance);
+    slider.addEventListener('focusout', startAutoAdvance);
+
+    // Keyboard navigation
+    slider.setAttribute('tabindex', '0');
+    slider.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            goTo(currentIndex + 1);
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            goTo(currentIndex - 1);
+        }
+    });
+
+    // Pause when the tab is not visible
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopAutoAdvance();
+        } else {
+            startAutoAdvance();
+        }
     });
 
     renderSlide(0);
     renderDots();
+    startAutoAdvance();
 }
 
 function renderQuickLinks() {
@@ -317,27 +380,119 @@ function initNewsletterForm() {
     });
 }
 
-// ===== HEADER SCROLL EFFECT =====
+// ===== HEADER SCROLL EFFECT (parallax + progress bar + to-top) =====
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 function initHeaderScroll() {
     const header = document.querySelector('.header');
+    const progress = document.getElementById('scrollProgress');
+    const heroBg = document.getElementById('heroBg');
+    const toTop = document.getElementById('toTop');
     if (!header) return;
 
-    let lastScroll = 0;
     const threshold = 100;
+    let ticking = false;
+
+    function update() {
+        const y = window.scrollY;
+        const isScrolled = y > threshold;
+
+        header.style.background = isScrolled ? 'rgba(253, 251, 247, 0.95)' : 'rgba(253, 251, 247, 0.85)';
+        header.style.borderBottomColor = isScrolled ? 'rgba(196, 168, 130, 0.25)' : 'rgba(196, 168, 130, 0.15)';
+
+        if (progress) {
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.transform = `scaleX(${docHeight > 0 ? Math.min(y / docHeight, 1) : 0})`;
+        }
+
+        if (heroBg && !prefersReducedMotion) {
+            heroBg.style.transform = `translate3d(0, ${y * 0.35}px, 0)`;
+        }
+
+        if (toTop) {
+            const show = y > 600;
+            if (show && toTop.hidden) {
+                toTop.hidden = false;
+                requestAnimationFrame(() => toTop.classList.add('is-visible'));
+            } else if (!show && !toTop.hidden) {
+                toTop.classList.remove('is-visible');
+                setTimeout(() => {
+                    if (window.scrollY <= 600) toTop.hidden = true;
+                }, 300);
+            }
+        }
+
+        ticking = false;
+    }
 
     window.addEventListener('scroll', () => {
-        const currentScroll = window.scrollY;
-        
-        if (currentScroll > threshold) {
-            header.style.background = 'rgba(253, 251, 247, 0.95)';
-            header.style.borderBottomColor = 'rgba(196, 168, 130, 0.25)';
-        } else {
-            header.style.background = 'rgba(253, 251, 247, 0.85)';
-            header.style.borderBottomColor = 'rgba(196, 168, 130, 0.15)';
+        if (!ticking) {
+            requestAnimationFrame(update);
+            ticking = true;
         }
-        
-        lastScroll = currentScroll;
     }, { passive: true });
+
+    update();
+}
+
+function initToTop() {
+    const toTop = document.getElementById('toTop');
+    if (!toTop) return;
+
+    toTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    });
+}
+
+// ===== HERO STAT COUNTERS =====
+function initHeroStats() {
+    const stats = document.querySelectorAll('.hero__stats strong');
+    if (!stats.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            const el = entry.target;
+            const target = parseInt(el.textContent.replace(/[^\d]/g, ''), 10);
+            const suffix = el.textContent.replace(/[\d,]/g, '');
+
+            if (prefersReducedMotion || Number.isNaN(target)) {
+                observer.unobserve(el);
+                return;
+            }
+
+            const duration = 1400;
+            const startTime = performance.now();
+
+            function step(now) {
+                const progress = Math.min((now - startTime) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.floor(target * eased).toLocaleString('es') + suffix;
+
+                if (progress < 1) requestAnimationFrame(step);
+            }
+
+            requestAnimationFrame(step);
+            observer.unobserve(el);
+        });
+    }, { threshold: 0.5 });
+
+    stats.forEach(el => observer.observe(el));
+}
+
+// ===== SMOOTH ANCHOR SCROLL =====
+function initSmoothAnchors() {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', e => {
+            const target = document.querySelector(link.getAttribute('href'));
+            if (!target) return;
+
+            e.preventDefault();
+            const top = target.getBoundingClientRect().top + window.scrollY - 80;
+            window.scrollTo({ top, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+        });
+    });
 }
 
 // ===== ACTIVE NAV LINK =====
@@ -368,6 +523,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeroScroll();
     initNewsletterForm();
     initHeaderScroll();
+    initToTop();
+    initHeroStats();
+    initSmoothAnchors();
     initActiveNav();
     
     // Trigger initial reveal check
@@ -382,7 +540,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ===== PERFORMANCE: Preload next page =====
+const prefetched = new Set();
+
 function preloadPage(href) {
+    if (!href || prefetched.has(href)) return;
+    prefetched.add(href);
+
     const link = document.createElement('link');
     link.rel = 'prefetch';
     link.href = href;
@@ -391,7 +554,10 @@ function preloadPage(href) {
 
 // Prefetch on hover
 document.addEventListener('mouseover', (e) => {
-    const link = e.target.closest('.nav__link, .card__link, .footer__list a');
+    const target = e.target;
+    if (!(target instanceof Element)) return;
+
+    const link = target.closest('.nav__link, .card__link, .footer__list a');
     if (link && link.href) {
         preloadPage(link.href);
     }
