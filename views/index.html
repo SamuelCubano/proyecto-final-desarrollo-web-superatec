@@ -9,10 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="../img/astro-hero-bg.svg" fetchpriority="high">
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
     <header class="header" role="banner">
+        <div class="header__progress" id="scrollProgress" aria-hidden="true"></div>
         <div class="container header__container">
             <a href="index.html" class="logo" aria-label="Astro Resorts - Inicio">
                 Astro<span>Resorts</span>
@@ -36,22 +40,28 @@
         </div>
     </header>
 
-    <main role="main">
+    <main id="main-content" role="main">
         <!-- Hero Section -->
         <section class="hero" aria-labelledby="hero-title">
+            <div class="hero__bg" id="heroBg" aria-hidden="true"></div>
             <div class="hero__overlay" aria-hidden="true"></div>
             <div class="container hero__container">
-                <div class="hero__content reveal">
-                    <span class="hero__subtitle">Experiencias Exclusivas</span>
-                    <h1 id="hero-title" class="hero__title">Descubre el Encanto del Viaje</h1>
-                    <p class="hero__description">
+                <div class="hero__content">
+                    <span class="hero__subtitle hero__anim" style="--d: 0ms">Experiencias Exclusivas</span>
+                    <h1 id="hero-title" class="hero__title hero__anim" style="--d: 120ms">Descubre el Encanto del Viaje</h1>
+                    <p class="hero__description hero__anim" style="--d: 260ms">
                         En Astro Resorts transformamos tus viajes en experiencias inolvidables. 
                         Desde cálidas playas hasta cumbres espectaculares, encontrarás tu santuario de lujo.
                     </p>
-                    <div class="hero__cta">
+                    <div class="hero__cta hero__anim" style="--d: 400ms">
                         <a href="paquetes.html" class="btn btn--primary">Reserva tu Estancia</a>
                         <a href="servicios.html" class="btn btn--secondary">Explora Servicios</a>
                     </div>
+                    <ul class="hero__stats hero__anim" style="--d: 540ms">
+                        <li><strong>4</strong><span>Destinos</span></li>
+                        <li><strong>150+</strong><span>Experiencias</span></li>
+                        <li><strong>98%</strong><span>Satisfacción</span></li>
+                    </ul>
                 </div>
             </div>
             <button class="hero__scroll-down" aria-label="Desplazarse hacia abajo para explorar">
@@ -97,6 +107,34 @@
             </div>
         </section>
 
+        <!-- Cómo reservar -->
+        <section class="section section--tint" aria-labelledby="como-title">
+            <div class="container">
+                <div class="section__header section__header--center reveal">
+                    <span class="section__eyebrow">Cómo funciona</span>
+                    <h2 id="como-title" class="section__title">Reservar es Más Fácil de lo que Piensas</h2>
+                    <p class="section__subtitle">Tres pasos y un especialista se ocupa del resto.</p>
+                </div>
+                <ol class="steps">
+                    <li class="step reveal">
+                        <span class="step__number" aria-hidden="true">01</span>
+                        <h3 class="step__title">Elige tu destino</h3>
+                        <p class="step__text">Explora los cuatro destinos y filtra los paquetes por estilo de viaje: relax, aventura o romance.</p>
+                    </li>
+                    <li class="step reveal">
+                        <span class="step__number" aria-hidden="true">02</span>
+                        <h3 class="step__title">Cuéntanos tu idea</h3>
+                        <p class="step__text">Describe fechas, número de personas y cualquier ocasión especial. Nos adaptamos a ti.</p>
+                    </li>
+                    <li class="step reveal">
+                        <span class="step__number" aria-hidden="true">03</span>
+                        <h3 class="step__title">Recibe tu plan</h3>
+                        <p class="step__text">Un especialista te contacta en menos de 24 horas con una propuesta cerrada y sin compromiso.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
         <!-- Testimonios -->
         <section class="section section--light" aria-labelledby="testimonios-title">
             <div class="container">
@@ -104,11 +142,11 @@
                     <span class="section__eyebrow">Testimonios</span>
                     <h2 id="testimonios-title" class="section__title">Lo que Dicen Nuestros Viajeros</h2>
                 </div>
-                <div class="testimonios-slider reveal" id="testimoniosSlider" role="region" aria-label="Testimonios de clientes" aria-live="polite">
-                    <!-- Testimonios will be rendered by JS -->
+                <div class="testimonios-slider reveal" id="testimoniosSlider" role="region" aria-roledescription="carrusel" aria-label="Testimonios de clientes">
+                    <!-- Testimonios rendered by JS -->
                 </div>
-                <div class="testimonios-dots" id="testimoniosDots" aria-label="Navegación de testimonios">
-                    <!-- Dots will be rendered by JS -->
+                <div class="testimonios-dots" id="testimoniosDots" role="group" aria-label="Seleccionar testimonio">
+                    <!-- Dots rendered by JS -->
                 </div>
             </div>
         </section>
@@ -191,6 +229,12 @@
             </div>
         </div>
     </footer>
+
+    <button class="to-top" id="toTop" type="button" aria-label="Volver al inicio de la página" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
 
     <script src="../js/index.js"></script>
 </body>
