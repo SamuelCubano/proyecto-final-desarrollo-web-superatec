@@ -1,60 +1,81 @@
 const locationData = [
     {
+        id: 'caracas',
+        title: 'Astro Resort Caracas',
+        text: 'Sede principal en Prados del Este. Disfruta del excelente clima de la capital, vistas impresionantes y máxima comodidad.',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUKFE9W-meIO8JSpGEy5XXJ_9Z5AxJtFgqp0ILuuL9ug&s=10',
+        rating: 4.9,
+        reviewsCount: 328,
+        meta: ['Prados del Este', 'Traslado VIP', 'Gastronomía Gourmet'],
+        gradient: 'linear-gradient(135deg, #10b981, #059669)'
+    },
+    {
         id: 'maldivas',
         title: 'Maldivas del Norte',
-        text: 'Villas flotantes y cielo despejado todo el año para disfrutar del paisaje desde el mar.',
-        image: '../img/destino-1.svg',
-        meta: ['Puestas de sol visibles', 'Traslado privado', 'Buceo premium'],
+        text: 'Villas flotantes y agua cristalina todo el año para disfrutar del paisaje marino exclusivo.',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTJOcaqiCZvNFUwwJnk1sx3EP0dafOfHEYBXWKmjCEEQ&s=10',
+        rating: 4.8,
+        reviewsCount: 245,
+        meta: ['Villas sobre el agua', 'Buceo VIP', 'Spa marino'],
         gradient: 'linear-gradient(135deg, #38bdf8, #8b5cf6)'
     },
     {
         id: 'andino',
         title: 'Santuario Andino',
-        text: 'Un refugio de montaña donde el aire puro convierte cada noche en un entorno natural privilegiado.',
-        image: '../img/destino-2.svg',
-        meta: ['Observatorio 24h', 'Aguas termales', 'Rutas guiadas'],
+        text: 'Un refugio de alta montaña con aire puro y cielos completamente despejados para la observación.',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMmPHV1aHG8aXha4U9eEHD2hXJOnUB7Mut1uUHWHIE7w&s=10',
+        rating: 4.7,
+        reviewsCount: 189,
+        meta: ['Observatorio 24h', 'Aguas termales', 'Senderismo guiado'],
         gradient: 'linear-gradient(135deg, #8b5cf6, #38bdf8)'
     },
     {
         id: 'desierto',
         title: 'Oasis del Desierto',
-        text: 'Silencio, dunas y un cielo sin contaminación lumínica para desconectar de verdad.',
-        image: '../img/destino-3.svg',
-        meta: ['Yoga al amanecer', 'Piscinas de sal', 'Cenas en el desierto'],
-        gradient: 'linear-gradient(135deg, #fbbf24, #38bdf8)'
-    },
-    {
-        id: 'helando',
-        title: 'Archipiélago Helado',
-        text: 'Iglús de cristal bajo la puesta de sol. Uno de los cielos más oscuros del planeta.',
-        image: '../img/destino-4.svg',
-        meta: ['Puesta de sol', 'Expediciones', 'Suite hielo'],
-        gradient: 'linear-gradient(135deg, #38bdf8, #a78bfa)'
+        text: 'Silencio absoluto, dunas doradas y cielos estrellados sin contaminación lumínica.',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQdXRmiWOpJgLA6qcPct_3Tz4YB9rG2XsoY5o9DWWMJA&s=10',
+        rating: 4.6,
+        reviewsCount: 152,
+        meta: ['Yoga en dunas', 'Piscinas térmicas', 'Cenas astronómicas'],
+        gradient: 'linear-gradient(135deg, #fbbf24, #d97706)'
     }
 ];
 
 const experienceData = [
     {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L15 8H21L13 12L16 18L12 14L8 18L11 12L3 8H9L12 2Z"/></svg>`,
-        title: 'Cielos certificados',
-        text: 'Seleccionamos ubicaciones con entornos naturales privilegiados para maximizar la observación.'
-    },
-    {
-        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16t-2-2V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V8a2 2 0 0 1 2-2v6a2 2 0 0 0 2 2h2Z"/><path d="M10 16V9a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2Z"/></svg>`,
-        title: 'Traslados incluidos',
-        text: 'Desde el aeropuerto al resort en vehículos blindados y, cuando aplica, en hidroavión.'
+        title: 'Ubicaciones estratégicas',
+        text: 'Seleccionamos ubicaciones únicas como Caracas y paraísos naturales privilegiados.'
     },
     {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
-        title: 'Guías locales',
-        text: 'Expertos en naturaleza, ecología y cultura local que enriquecen cada recorrido.'
+        title: 'Traslados privados',
+        text: 'Desde el Aeropuerto Internacional Simón Bolívar (Maiquetía) u otros aeropuertos directo al resort.'
     },
     {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
-        title: 'Protocolos de seguridad',
-        text: 'Accesos controlados, seguros y asistencia 24/7 en cada destino.'
+        title: 'Atención personalizada',
+        text: 'Servicio 5 estrellas, concierge exclusivo y seguridad garantizada 24/7.'
     }
 ];
+
+// Generador de estrellas de puntuación
+function renderStars(rating) {
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 >= 0.5;
+    let starsHtml = '';
+
+    for (let i = 0; i < 5; i++) {
+        if (i < fullStars) {
+            starsHtml += '<span class="star star--full">★</span>';
+        } else if (i === fullStars && hasHalfStar) {
+            starsHtml += '<span class="star star--half">★</span>';
+        } else {
+            starsHtml += '<span class="star star--empty">☆</span>';
+        }
+    }
+    return starsHtml;
+}
 
 function renderLocations() {
     const container = document.getElementById('locationGrid');
@@ -62,10 +83,23 @@ function renderLocations() {
 
     container.innerHTML = locationData.map((loc, index) => `
         <article class="location-card reveal" style="--card-gradient: ${loc.gradient}; animation-delay: ${index * 80}ms">
-            <div class="location-card__map" style="background-image: url('${loc.image}')" aria-hidden="true"></div>
-            <h3 class="location-card__title">${loc.title}</h3>
-            <p class="location-card__text">${loc.text}</p>
-            <div class="location-card__meta">${loc.map(item => `<span>${item}</span>`).join('')}</div>
+            <div class="location-card__image-wrap">
+                <img src="${loc.image}" alt="${loc.title}" class="location-card__img" loading="lazy">
+                <div class="location-card__badge-rating">
+                    <span class="star-icon">★</span> ${loc.rating}
+                </div>
+            </div>
+            <div class="location-card__content">
+                <div class="location-card__rating-row">
+                    <div class="stars-inline">${renderStars(loc.rating)}</div>
+                    <span class="rating-text">${loc.rating} / 5.0 (${loc.reviewsCount})</span>
+                </div>
+                <h3 class="location-card__title">${loc.title}</h3>
+                <p class="location-card__text">${loc.text}</p>
+                <div class="location-card__meta">
+                    ${loc.meta.map(item => `<span class="meta-tag">${item}</span>`).join('')}
+                </div>
+            </div>
         </article>
     `).join('');
 }
@@ -118,6 +152,8 @@ function initMobileNav() {
 
 function initHeader() {
     const header = document.querySelector('.header');
+    if (!header) return;
+
     window.addEventListener('scroll', () => {
         const isScrolled = window.scrollY > 80;
         header.style.background = isScrolled ? 'rgba(253, 251, 247, .96)' : '';
@@ -125,8 +161,11 @@ function initHeader() {
     }, { passive: true });
 }
 
-renderLocations();
-renderExperiences();
-initReveal();
-initMobileNav();
-initHeader();
+// Inicialización general tras cargar el DOM
+document.addEventListener('DOMContentLoaded', () => {
+    renderLocations();
+    renderExperiences();
+    initReveal();
+    initMobileNav();
+    initHeader();
+});

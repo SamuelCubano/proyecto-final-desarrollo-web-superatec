@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Localización de los destinos Astro Resorts.">
+    <meta name="description" content="Localización de los destinos Astro Resorts en Caracas y el mundo.">
     <meta name="theme-color" content="#f5f0e8">
     <title>Localización — Astro Resorts</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS para el mapa estilo Google Maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="../css/localizacion.css">
 </head>
 <body>
@@ -35,38 +38,89 @@
     </header>
 
     <main role="main">
+        <!-- Hero Section -->
         <section class="page-hero" aria-labelledby="page-title">
             <div class="page-hero__overlay" aria-hidden="true"></div>
             <div class="container page-hero__container">
                 <span class="page-hero__eyebrow reveal">Nuestros destinos</span>
                 <h1 id="page-title" class="page-hero__title reveal">Ubicaciones exclusivas</h1>
-                <p class="page-hero__text reveal">Cuatro puntos del planeta elegidos para combinar paisaje, cielo y lujo.</p>
+                <p class="page-hero__text reveal">Puntos del planeta elegidos para combinar paisaje, confort y experiencia de lujo.</p>
             </div>
         </section>
 
-        <section class="section section--light" aria-labelledby="locations-title">
+        <!-- Sede Principal en Caracas con Mapa Interactivo -->
+        <!-- Sede Principal en Caracas con Google Maps Iframe -->
+        <section class="section section--light" aria-labelledby="caracas-title">
             <div class="container">
                 <div class="section__header reveal">
-                    <span class="section__eyebrow">Nuestros Destinos</span>
+                    <span class="section__eyebrow">Sede Principal & Resort Insignia</span>
+                    <h2 id="caracas-title" class="section__title">Caracas, Venezuela</h2>
+                    <p class="section__subtitle">Ubicación exclusiva con vista panorámica y acceso directo a la ciudad.</p>
+                </div>
+
+                <div class="main-location reveal">
+                    <div class="main-location__info">
+                        <div class="rating-badge">
+                            <div class="stars" aria-label="Calificación 4.9 de 5 estrellas">
+                                ★★★★★
+                            </div>
+                            <span class="rating-score">4.9 / 5.0</span>
+                            <span class="rating-count">(328 opiniones)</span>
+                        </div>
+                        <h3>Astro Resort Caracas</h3>
+                        <p class="main-location__address">
+                            📍 Prados del Este, Caracas 1030, Distrito Capital, Venezuela.
+                        </p>
+                        <p class="main-location__description">
+                            Disfruta del mejor clima de la capital venezolana con vistas privilegiadas, suites de primer nivel y un entorno de lujo diseñado para tu confort y descanso.
+                        </p>
+                        <div class="main-location__gallery">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUKFE9W-meIO8JSpGEy5XXJ_9Z5AxJtFgqp0ILuuL9ug&s=10" alt="Resort Caracas vista exterior">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3v_SYCS0j2wOQ23fYNp2i5l-JGoUnCHtB3qTWwPMlAw&s=10" alt="Suite de lujo">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrdW4vZv5Z1vK19Wbqsa2nPRaTMINQjoBBI94UQEKTBg&s=10" alt="Piscina infinity">
+                        </div>
+                    </div>
+
+                    <!-- Contenedor del Iframe de Google Maps -->
+                    <div class="main-location__map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.7923794865915!2d-66.94326857591561!3d10.517012639616416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a5ef2415e14e5%3A0x574888eae126c1d9!2sPrados%20del%20Este%2C%20Caracas%201030%2C%20Distrito%20Capital!5e0!3m2!1ses-419!2sve!4v1790689391899!5m2!1ses-419!2sve" 
+                            class="google-map-iframe"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="strict-origin-when-cross-origin">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rejilla de Todos los Destinos -->
+        <section class="section section--dark" aria-labelledby="locations-title">
+            <div class="container">
+                <div class="section__header reveal">
+                    <span class="section__eyebrow">Red Internacional</span>
                     <h2 id="locations-title" class="section__title">Explora nuestras localizaciones</h2>
-                    <p class="section__subtitle">Cada destino tiene su propia personalidad y encanto único.</p>
+                    <p class="section__subtitle">Cada destino cuenta con su propia personalidad, imágenes y valoraciones de huéspedes.</p>
                 </div>
                 <div class="location-grid" id="locationGrid"></div>
             </div>
         </section>
 
-        <section class="section section--dark" aria-labelledby="experience-title">
+        <!-- Experiencia -->
+        <section class="section section--light" aria-labelledby="experience-title">
             <div class="container">
                 <div class="section__header section__header--center reveal">
                     <span class="section__eyebrow">Vive el lugar</span>
-                    <h2 id="experience-title" class="section__title">¿Qué esperar?</h2>
-                    <p class="section__subtitle">Accesos controlados, traslados privados y experiencias alineadas al entorno.</p>
+                    <h2 id="experience-title" class="section__title">¿Qué esperar de nuestras sedes?</h2>
+                    <p class="section__subtitle">Accesos controlados, traslados privados y servicios de primer nivel.</p>
                 </div>
                 <div class="experience-list" id="experienceList"></div>
             </div>
         </section>
 
-        <section class="section section--light" aria-labelledby="cta-title">
+        <!-- CTA -->
+        <section class="section section--dark" aria-labelledby="cta-title">
             <div class="container">
                 <div class="section__header section__header--center reveal">
                     <span class="section__eyebrow">Viaje sin fronteras</span>
@@ -82,15 +136,21 @@
 
     <footer class="footer" role="contentinfo">
         <div class="container footer__container">
-            <div class="footer__brand reveal"><a href="index.html" class="logo">Astro<span>Resorts</span></a><p class="footer__tagline">Donde el lujo se encuentra con la naturaleza.</p></div>
+            <div class="footer__brand reveal">
+                <a href="index.html" class="logo">Astro<span>Resorts</span></a>
+                <p class="footer__tagline">Donde el lujo se encuentra con la naturaleza.</p>
+            </div>
             <div class="footer__links">
-                <div class="footer__col reveal"><h4 class="footer__title">Destinos</h4><ul class="footer__list"><li><a href="paquetes.html#maldivas">Maldivas del Norte</a></li><li><a href="paquetes.html#andino">Santuario Andino</a></li><li><a href="paquetes.html#desierto">Oasis del Desierto</a></li><li><a href="paquetes.html#helando">Archipiélago Helado</a></li></ul></div>
+                <div class="footer__col reveal"><h4 class="footer__title">Destinos</h4><ul class="footer__list"><li><a href="#caracas">Caracas - El Ávila</a></li><li><a href="paquetes.html#maldivas">Maldivas del Norte</a></li><li><a href="paquetes.html#andino">Santuario Andino</a></li><li><a href="paquetes.html#desierto">Oasis del Desierto</a></li></ul></div>
                 <div class="footer__col reveal"><h4 class="footer__title">Compañía</h4><ul class="footer__list"><li><a href="sobre-nosotros.html">Sobre Nosotros</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="terminos-y-condiciones.html">Términos y Condiciones</a></li></ul></div>
-                <div class="footer__col reveal"><h4 class="footer__title">Contacto</h4><ul class="footer__list"><li><a href="mailto:reservas@beigehotels.com" class="footer__contact">reservas@beigehotels.com</a></li><li><a href="tel:+15550210288" class="footer__contact">+1 (555) 021-0288</a></li><li><address class="footer__contact">Avenida Principal 127, Centro</address></li></ul></div>
+                <div class="footer__col reveal"><h4 class="footer__title">Contacto Caracas</h4><ul class="footer__list"><li><a href="mailto:reservas@astroresorts.com" class="footer__contact">reservas@astroresorts.com</a></li><li><a href="tel:+582125550199" class="footer__contact">+58 (212) 555-0199</a></li><li><address class="footer__contact">Av. Luis Roche, Altamira, Caracas</address></li></ul></div>
             </div>
         </div>
         <div class="footer__bottom"><div class="container"><p class="footer__copyright">&copy; 2026 Astro Resorts. Todos los derechos reservados.</p></div></div>
     </footer>
+
+    <!-- Leaflet JS para renderizar el mapa interactivo -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="../js/localizacion.js"></script>
 </body>
 </html>
