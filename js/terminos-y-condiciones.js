@@ -10,6 +10,11 @@ function initReveal() {
     }, { threshold: .12 });
 
     revealElements.forEach(el => observer.observe(el));
+
+    const cards = document.querySelectorAll('.terms-card.reveal');
+    cards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 100}ms`;
+    });
 }
 
 function initMobileNav() {
@@ -35,8 +40,9 @@ function initHeader() {
     const header = document.querySelector('.header');
     window.addEventListener('scroll', () => {
         const isScrolled = window.scrollY > 80;
-        header.style.background = isScrolled ? 'rgba(10, 10, 18, .96)' : '';
-        header.style.borderBottomColor = isScrolled ? 'rgba(139, 92, 246, .3)' : '';
+        header.style.background = isScrolled ? '#8B5E3C' : '';
+        header.style.borderBottomColor = isScrolled ? 'rgba(196, 168, 130, 0.4)' : '';
+        header.classList.toggle('header--scrolled', isScrolled);
     }, { passive: true });
 }
 
