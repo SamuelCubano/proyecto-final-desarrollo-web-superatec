@@ -367,7 +367,7 @@ address {
 }
 
 .nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
+    translate: translateY(-6px) rotate(-45deg);
 }
 
 /* ===== BUTTONS ===== */
@@ -1107,6 +1107,7 @@ address {
     .btn--lg { padding: var(--space-4) var(--space-8); }
 
     .card__content { padding: var(--space-4); }
+
     .timeline-item { padding: var(--space-6) 0; }
     .timeline-item__content { padding: var(--space-4); }
 }
