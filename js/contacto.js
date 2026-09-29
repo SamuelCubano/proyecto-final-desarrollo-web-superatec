@@ -3,6 +3,7 @@ const contactSuccess = document.getElementById('contactSuccess');
 const openSupport = document.getElementById('openSupport');
 const navToggle = document.getElementById('navToggle');
 const navList = document.getElementById('navList');
+const anonymousCheck = document.getElementById('anonymousCheck');
 
 function initReveal() {
     const revealElements = document.querySelectorAll('.reveal:not(.reveal--visible)');
@@ -13,7 +14,7 @@ function initReveal() {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: .12 });
+    }, { threshold: 0.12 });
 
     revealElements.forEach(el => observer.observe(el));
 }
@@ -54,43 +55,91 @@ function initHeader() {
     }, { passive: true });
 }
 
+function initAnonymousToggle() {
+    if (!anonymousCheck) return;
+
+    const fieldsToToggle = [
+        { input: document.getElementById('contactName'), group: document.getElementById('groupName') },
+        { input: document.getElementById('contactEmail'), group: document.getElementById('groupEmail') },
+        { input: document.getElementById('contactPhone'), group: document.getElementById('groupPhone') }
+    ];
+
+    anonymousCheck.addEventListener('change', () => {
+        const isAnon = anonymousCheck.checked;
+
+        fieldsToToggle.forEach(({ input, group }) => {
+            if (!input || !group) return;
+
+            input.disabled = isAnon;
+            group.classList.toggle('is-disabled', isAnon);
+            group.classList.remove('has-error');
+
+            if (isAnon) {
+                input.value = '';
+                input.removeAttribute('required');
+            } else {
+                if (input.id !== 'contactPhone') {
+                    input.setAttribute('required', 'true');
+                }
+            }
+        });
+    });
+}
+
 function initContactForm() {
     if (!contactForm) return;
 
     contactForm.addEventListener('submit', e => {
         e.preventDefault();
-        const required = contactForm.querySelectorAll('[required]');
+        const requiredFields = contactForm.querySelectorAll('[required]:not([disabled])');
         let isValid = true;
 
-        required.forEach(field => {
+        requiredFields.forEach(field => {
             const group = field.closest('.form-group');
             const filled = field.value.trim() !== '';
             const emailOk = field.type !== 'email' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value);
             const fieldOk = filled && emailOk;
-            group.classList.toggle('has-error', !fieldOk);
+
+            if (group) {
+                group.classList.toggle('has-error', !fieldOk);
+            }
             if (!fieldOk) isValid = false;
         });
 
         if (!isValid) {
-            contactForm.querySelector('.has-error input, .has-error select, .has-error textarea')?.focus();
+            const firstError = contactForm.querySelector('.has-error input, .has-error select, .has-error textarea');
+            if (firstError) firstError.focus();
             return;
         }
 
         const submitButton = contactForm.querySelector('[type="submit"]');
         submitButton.disabled = true;
-        submitButton.textContent = 'Enviando...';
+        submitButton.textContent = 'Enviando solicitud...';
 
         setTimeout(() => {
             submitButton.disabled = false;
-            submitButton.textContent = 'Enviar mensaje';
-            contactSuccess.classList.add('is-visible');
+            submitButton.textContent = 'Enviar Solicitud';
+            if (contactSuccess) {
+                contactSuccess.classList.add('is-visible');
+            }
+
             contactForm.reset();
-            setTimeout(() => contactSuccess.classList.remove('is-visible'), 5000);
+            if (anonymousCheck && anonymousCheck.checked) {
+                anonymousCheck.checked = false;
+                anonymousCheck.dispatchEvent(new Event('change'));
+            }
+
+            setTimeout(() => {
+                if (contactSuccess) contactSuccess.classList.remove('is-visible');
+            }, 6000);
         }, 1200);
     });
 
     contactForm.querySelectorAll('input, select, textarea').forEach(field => {
-        field.addEventListener('input', () => field.closest('.form-group')?.classList.remove('has-error'));
+        field.addEventListener('input', () => {
+            const group = field.closest('.form-group');
+            if (group) group.classList.remove('has-error');
+        });
     });
 }
 
@@ -98,12 +147,13 @@ function initSupportChat() {
     if (!openSupport) return;
 
     openSupport.addEventListener('click', () => {
-        alert('Chat de soporte: conéctate en menos de 5 minutos por este medio. Soporte 24/7.');
+        alert('Abriendo ventana de chat en vivo con un agente de Astro Resorts...');
     });
 }
 
 initReveal();
 initMobileNav();
 initHeader();
+initAnonymousToggle();
 initContactForm();
 initSupportChat();

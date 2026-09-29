@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contacta con Astro Resorts. Reservas, prensa y soporte 24/7.">
+    <meta name="description" content="Contacta con Astro Resorts. Reservas, atención personalizada, eventos y soporte 24/7.">
     <meta name="theme-color" content="#f5f0e8">
     <title>Contacto — Astro Resorts</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,75 +38,147 @@
         <section class="page-hero" aria-labelledby="page-title">
             <div class="page-hero__overlay" aria-hidden="true"></div>
             <div class="container page-hero__container">
-                <span class="page-hero__eyebrow reveal">Habla con nuestro equipo</span>
-                <h1 id="page-title" class="page-hero__title reveal">Contacto</h1>
-                <p class="page-hero__text reveal">Estamos listos para diseñar tu viaje, responder dudas o simplemente inspirarte.</p>
+                <span class="page-hero__eyebrow reveal">Atención Personalizada</span>
+                <h1 id="page-title" class="page-hero__title reveal">Contacto & Asistencia</h1>
+                <p class="page-hero__text reveal">Estamos a su disposición para coordinar cada detalle de su próxima estadía.</p>
             </div>
         </section>
 
+        <!-- Canales Directos Segmentados -->
         <section class="section section--light contact-layout" aria-labelledby="contact-title">
             <div class="container">
                 <div class="section__header reveal">
-                    <span class="section__eyebrow">Canales directos</span>
-                    <h2 id="contact-title" class="section__title">Información de contacto</h2>
-                    <p class="section__subtitle">Elige el canal que prefieras. Nuestro equipo responde en menos de 24 horas.</p>
+                    <span class="section__eyebrow">Canales de Atención</span>
+                    <h2 id="contact-title" class="section__title">
+                        Comunícate <span class="title-break">con Nosotros</span>
+                    </h2>
+                    <p class="section__subtitle">Selecciona el departamento o canal de tu preferencia para recibir atención directa.</p>
                 </div>
                 <div class="contact-grid">
                     <div class="contact-card reveal">
                         <div class="contact-card__icon" aria-hidden="true">✉</div>
-                        <h3 class="contact-card__title">Correo</h3>
-                        <a class="contact-card__value" href="mailto:reservas@beigehotels.com">reservas@beigehotels.com</a>
-                        <p class="contact-card__note">Ideal para reservas y presupuestos.</p>
+                        <h3 class="contact-card__title">Reservas & Estadías</h3>
+                        <a class="contact-card__value" href="mailto:reservas@astroresorts.com">reservas@astroresorts.com</a>
+                        <p class="contact-card__note">Disponibilidad, presupuestos y solicitudes especiales.</p>
                     </div>
                     <div class="contact-card reveal">
                         <div class="contact-card__icon" aria-hidden="true">✆</div>
-                        <h3 class="contact-card__title">Teléfono</h3>
+                        <h3 class="contact-card__title">Línea Directa / Concierge</h3>
                         <a class="contact-card__value" href="tel:+15550210288">+1 (555) 021-0288</a>
-                        <p class="contact-card__note">Lun a Vie de 9:00 a 21:00 UTC-5.</p>
+                        <p class="contact-card__note">Atención telefónica 24/7 en varios idiomas.</p>
+                    </div>
+                    <div class="contact-card reveal">
+                        <div class="contact-card__icon" aria-hidden="true">💬</div>
+                        <h3 class="contact-card__title">WhatsApp Concierge</h3>
+                        <a class="contact-card__value" href="https://wa.me/15550210288" target="_blank" rel="noopener">Enviar Mensaje</a>
+                        <p class="contact-card__note">Asistencia inmediata para huéspedes y consultas rápidas.</p>
                     </div>
                     <div class="contact-card reveal">
                         <div class="contact-card__icon" aria-hidden="true">✺</div>
-                        <h3 class="contact-card__title">Chat de Soporte</h3>
-                        <button class="contact-card__value" type="button" id="openSupport">Iniciar chat de soporte</button>
-                        <p class="contact-card__note">Respuesta inmediata para consultas urgentes.</p>
+                        <h3 class="contact-card__title">Chat en Vivo</h3>
+                        <button class="contact-card__btn" type="button" id="openSupport">Iniciar Chat</button>
+                        <p class="contact-card__note">Conecta directamente con nuestro equipo de atención.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Formulario con Opción de Envío Anónimo -->
         <section class="section section--dark" aria-labelledby="form-title">
             <div class="container contact-form-layout">
                 <div class="contact-form__intro reveal">
-                    <span class="section__eyebrow">Formulario</span>
-                    <h2 id="form-title" class="section__title">Escríbenos tu mensaje</h2>
-                    <p class="section__subtitle">Cuéntanos fechas, destino y cualquier necesidad especial. Te devolvemos la llamada si lo necesitas.</p>
+                    <span class="section__eyebrow">Solicitud Personalizada</span>
+                    <h2 id="form-title" class="section__title">
+                        Envíanos <span class="title-break">un Mensaje</span>
+                    </h2>
+                    <p class="section__subtitle">Cuéntanos tus planes, fechas estimadas o requerimientos especiales. Responderemos en menos de 24 horas.</p>
                 </div>
                 <form class="contact-form" id="contactForm" novalidate>
+                    <!-- Opción de Anonimato por Privacidad -->
+                    <div class="form-group form-group--checkbox">
+                        <label class="form-checkbox-label" for="anonymousCheck">
+                            <input type="checkbox" id="anonymousCheck" name="is_anonymous" class="form-checkbox">
+                            <span>Enviar de forma anónima (por privacidad)</span>
+                        </label>
+                    </div>
+
                     <div class="form-row">
-                        <div class="form-group"><label class="form-label" for="contactName">Nombre</label><input class="form-input" id="contactName" name="name" type="text" required autocomplete="name"><span class="form-error">Ingresa tu nombre</span></div>
-                        <div class="form-group"><label class="form-label" for="contactEmail">Correo</label><input class="form-input" id="contactEmail" name="email" type="email" required autocomplete="email"><span class="form-error">Ingresa un correo válido</span></div>
+                        <div class="form-group" id="groupName">
+                            <label class="form-label" for="contactName">Nombre completo</label>
+                            <input class="form-input" id="contactName" name="name" type="text" required autocomplete="name">
+                            <span class="form-error">Ingresa tu nombre</span>
+                        </div>
+                        <div class="form-group" id="groupEmail">
+                            <label class="form-label" for="contactEmail">Correo electrónico</label>
+                            <input class="form-input" id="contactEmail" name="email" type="email" required autocomplete="email">
+                            <span class="form-error">Ingresa un correo válido</span>
+                        </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group"><label class="form-label" for="contactDestination">Destino</label><select class="form-select" id="contactDestination" name="destination"><option value="">Selecciona un destino</option><option>Maldivas del Norte</option><option>Santuario Andino</option><option>Oasis del Desierto</option><option>Archipiélago Helado</option></select><span class="form-error">Selecciona un destino</span></div>
-                        <div class="form-group"><label class="form-label" for="contactDate">Fecha aproximada</label><input class="form-input" id="contactDate" name="date" type="date"><span class="form-error">Indica una fecha</span></div>
+                        <div class="form-group">
+                            <label class="form-label" for="contactSubject">Motivo de consulta</label>
+                            <select class="form-select" id="contactSubject" name="subject" required>
+                                <option value="">Selecciona un motivo</option>
+                                <option value="reservas">Nueva Reserva / Cotización</option>
+                                <option value="eventos">Eventos Privados & Bodas</option>
+                                <option value="concierge">Servicios de Concierge / Experiencias</option>
+                                <option value="sugerencia">Sugerencia / Quejas y Reclamos</option>
+                                <option value="otro">Otras Consultas</option>
+                            </select>
+                            <span class="form-error">Selecciona un motivo</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contactDestination">Destino de preferencia</label>
+                            <select class="form-select" id="contactDestination" name="destination">
+                                <option value="">Selecciona un destino</option>
+                                <option>Isla de Coche</option>
+                                <option>Morrocoy</option>
+                                <option>Isla de Margarita</option>
+                                <option>Canaima</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="form-group"><label class="form-label" for="contactMessage">Mensaje</label><textarea class="form-textarea" id="contactMessage" name="message" placeholder="Cuéntanos qué necesitas..." required></textarea><span class="form-error">Escribe tu mensaje</span></div>
-                    <button class="btn btn--primary btn--lg" type="submit">Enviar mensaje</button>
-                    <p class="form-success" id="contactSuccess">Mensaje enviado. Te contactaremos pronto.</p>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="contactDate">Fecha estimada</label>
+                            <input class="form-input" id="contactDate" name="date" type="date">
+                        </div>
+                        <div class="form-group" id="groupPhone">
+                            <label class="form-label" for="contactPhone">Teléfono (opcional)</label>
+                            <input class="form-input" id="contactPhone" name="phone" type="tel" autocomplete="tel">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="contactMessage">Mensaje o Solicitud Especial</label>
+                        <textarea class="form-textarea" id="contactMessage" name="message" placeholder="Describe tus preferencias o detalles de tu viaje..." required></textarea>
+                        <span class="form-error">Escribe tu mensaje</span>
+                    </div>
+                    <button class="btn btn--primary btn--lg" type="submit">Enviar Solicitud</button>
+                    <p class="form-success" id="contactSuccess">Mensaje enviado con éxito. Nuestro equipo procesará tu solicitud.</p>
                 </form>
             </div>
         </section>
 
+        <!-- Preguntas Frecuentes -->
         <section class="section section--light" aria-labelledby="faq-title">
             <div class="container">
                 <div class="section__header section__header--center reveal">
-                    <span class="section__eyebrow">Ayuda rápida</span>
-                    <h2 id="faq-title" class="section__title">Preguntas frecuentes de contacto</h2>
+                    <span class="section__eyebrow">Ayuda Rápida</span>
+                    <h2 id="faq-title" class="section__title">Preguntas Frecuentes</h2>
                 </div>
                 <div class="faq-list" id="faqList">
-                    <details class="faq-item reveal"><summary>¿Con cuánta antelación debo reservar?<span class="faq-item__icon" aria-hidden="true">+</span></summary><p>Recomendamos entre 3 y 6 meses para temporada alta.</p></details>
-                    <details class="faq-item reveal"><summary>¿Atienden eventos privados?<span class="faq-item__icon" aria-hidden="true">+</span></summary><p>Sí. Bodas, cumpleaños y eventos corporativos.</p></details>
-                    <details class="faq-item reveal"><summary>¿Puedo reprogramar sin penalidad?<span class="faq-item__icon" aria-hidden="true">+</span></summary><p>Depende de la tarifa. Consulta nuestros términos.</p></details>
+                    <details class="faq-item reveal">
+                        <summary>¿Con cuánta antelación debo planificar mi reserva?<span class="faq-item__icon" aria-hidden="true">+</span></summary>
+                        <p>Para garantizar disponibilidad en villas exclusivas y durante temporada alta, recomendamos realizar su reserva con 3 a 6 meses de anticipación.</p>
+                    </details>
+                    <details class="faq-item reveal">
+                        <summary>¿Organizan eventos corporativos o bodas privadas?<span class="faq-item__icon" aria-hidden="true">+</span></summary>
+                        <p>Sí, contamos con un equipo especializado en organización de eventos a medida, experiencias gastronómicas exclusivas y logística completa.</p>
+                    </details>
+                    <details class="faq-item reveal">
+                        <summary>¿Cuáles son las políticas de cancelación y reprogramación?<span class="faq-item__icon" aria-hidden="true">+</span></summary>
+                        <p>Ofrecemos flexibilidad dependiendo del paquete seleccionado. Le invitamos a revisar los términos y condiciones de su tarifa al cotizar.</p>
+                    </details>
                 </div>
             </div>
         </section>
@@ -114,14 +186,44 @@
 
     <footer class="footer" role="contentinfo">
         <div class="container footer__container">
-            <div class="footer__brand reveal"><a href="index.html" class="logo">Astro<span>Resorts</span></a><p class="footer__tagline">Donde el lujo se encuentra con la naturaleza.</p></div>
+            <div class="footer__brand reveal">
+                <a href="index.html" class="logo">Astro<span>Resorts</span></a>
+                <p class="footer__tagline">Donde el lujo se encuentra con la naturaleza.</p>
+            </div>
             <div class="footer__links">
-                <div class="footer__col reveal"><h4 class="footer__title">Destinos</h4><ul class="footer__list"><li><a href="paquetes.html#maldivas">Maldivas del Norte</a></li><li><a href="paquetes.html#andino">Santuario Andino</a></li><li><a href="paquetes.html#desierto">Oasis del Desierto</a></li><li><a href="paquetes.html#helando">Archipiélago Helado</a></li></ul></div>
-                <div class="footer__col reveal"><h4 class="footer__title">Compañía</h4><ul class="footer__list"><li><a href="sobre-nosotros.html">Sobre Nosotros</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="terminos-y-condiciones.html">Términos y Condiciones</a></li></ul></div>
-                <div class="footer__col reveal"><h4 class="footer__title">Contacto</h4><ul class="footer__list"><li><a href="mailto:reservas@beigehotels.com" class="footer__contact">reservas@beigehotels.com</a></li><li><a href="tel:+15550210288" class="footer__contact">+1 (555) 021-0288</a></li><li><address class="footer__contact">Avenida Principal 127, Centro</address></li></ul></div>
+                <div class="footer__col reveal">
+                    <h4 class="footer__title">Destinos</h4>
+                    <ul class="footer__list">
+                        <li><a href="paquetes.html#maldivas">Isla de Coche</a></li>
+                        <li><a href="paquetes.html#andino">Morrocoy</a></li>
+                        <li><a href="paquetes.html#desierto">Los Roques</a></li>
+                        <li><a href="paquetes.html#helando">Canaima</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col reveal">
+                    <h4 class="footer__title">Compañía</h4>
+                    <ul class="footer__list">
+                        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="terminos-y-condiciones.html">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col reveal">
+                    <h4 class="footer__title">Contacto</h4>
+                    <ul class="footer__list">
+                        <li><a href="mailto:reservas@astroresorts.com" class="footer__contact">reservas@astroresorts.com</a></li>
+                        <li><a href="tel:+15550210288" class="footer__contact">+1 (555) 021-0288</a></li>
+                        <li><address class="footer__contact">Avenida Principal 127, Centro</address></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="footer__bottom"><div class="container"><p class="footer__copyright">&copy; 2026 Astro Resorts. Todos los derechos reservados.</p></div></div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p class="footer__copyright">&copy; 2026 Astro Resorts. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
     <script src="../js/contacto.js"></script>
 </body>
